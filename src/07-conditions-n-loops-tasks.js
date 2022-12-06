@@ -52,8 +52,10 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  if (n !== 1) {
+    return n * getFactorial(n - 1);
+  } return 1;
 }
 
 
@@ -69,8 +71,12 @@ function getFactorial(/* n */) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  let sum = 0;
+  for (let i = n1; i <= n2; i + 1) {
+    sum += i;
+  }
+  return sum;
 }
 
 
@@ -128,9 +134,18 @@ function isTriangle(a, b, c) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-function doRectanglesOverlap(/* rect1, rect2 */) {
-  throw new Error('Not implemented');
-}
+// function doRectanglesOverlap(rect1, rect2) {
+//   const minX1 = rect1.left;
+//   const maxX1 = rect1.left + rect1.width;
+//   const minY1 = rect1.top;
+//   const maxY1 = rect1.top + rect1.height;
+//   const minX2 = rect2.left;
+//   const maxX2 = rect2.left + rect2.width;
+//   const minY2 = rect2.top;
+//   const maxY2 = rect2.top + rect2.height;
+
+//   if (minX1)
+// }
 
 
 /**
@@ -236,8 +251,13 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  const str = String(num);
+  const arr = [];
+  for (let i = 0; i < str.length; i + 1) {
+    arr.push(str[i]);
+  }
+  return arr.reverse();
 }
 
 
@@ -415,7 +435,7 @@ module.exports = {
   getFactorial,
   getSumBetweenNumbers,
   isTriangle,
-  doRectanglesOverlap,
+  //  doRectanglesOverlap,
   isInsideCircle,
   findFirstSingleChar,
   getIntervalString,
