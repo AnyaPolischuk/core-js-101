@@ -53,9 +53,7 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-  if (n !== 1) {
-    return n * getFactorial(n - 1);
-  } return 1;
+  return (n !== 1) ? n * getFactorial(n - 1) : 1;
 }
 
 
@@ -73,7 +71,7 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(n1, n2) {
   let sum = 0;
-  for (let i = n1; i <= n2; i + 1) {
+  for (let i = n1; i <= n2; i += 1) {
     sum += i;
   }
   return sum;
@@ -98,7 +96,8 @@ function getSumBetweenNumbers(n1, n2) {
 function isTriangle(a, b, c) {
   if (a + b > c && a + c > b && c + b > a) {
     return true;
-  } return false;
+  }
+  return false;
 }
 
 
@@ -134,18 +133,19 @@ function isTriangle(a, b, c) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-// function doRectanglesOverlap(rect1, rect2) {
-//   const minX1 = rect1.left;
-//   const maxX1 = rect1.left + rect1.width;
-//   const minY1 = rect1.top;
-//   const maxY1 = rect1.top + rect1.height;
-//   const minX2 = rect2.left;
-//   const maxX2 = rect2.left + rect2.width;
-//   const minY2 = rect2.top;
-//   const maxY2 = rect2.top + rect2.height;
+function doRectanglesOverlap(/* rect1, rect2 */) {
+  throw new Error('Not implemented');
+  // const minX1 = rect1.left;
+  // const maxX1 = rect1.left + rect1.width;
+  // const minY1 = rect1.top;
+  // const maxY1 = rect1.top + rect1.height;
+  // const minX2 = rect2.left;
+  // const maxX2 = rect2.left + rect2.width;
+  // const minY2 = rect2.top;
+  // const maxY2 = rect2.top + rect2.height;
 
-//   if (minX1)
-// }
+  // if (minX1)
+}
 
 
 /**
@@ -254,10 +254,10 @@ function reverseString(/* str */) {
 function reverseInteger(num) {
   const str = String(num);
   const arr = [];
-  for (let i = 0; i < str.length; i + 1) {
+  for (let i = 0; i < str.length; i += 1) {
     arr.push(str[i]);
   }
-  return arr.reverse();
+  return arr.reverse().join('');
 }
 
 
@@ -350,8 +350,8 @@ function isBracketsBalanced(/* str */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  throw new Error('Not implemented');
+function toNaryString(num, n) {
+  return num.toString(n);
 }
 
 
@@ -435,7 +435,7 @@ module.exports = {
   getFactorial,
   getSumBetweenNumbers,
   isTriangle,
-  //  doRectanglesOverlap,
+  doRectanglesOverlap,
   isInsideCircle,
   findFirstSingleChar,
   getIntervalString,
